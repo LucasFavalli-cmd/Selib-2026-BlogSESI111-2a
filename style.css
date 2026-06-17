@@ -1,0 +1,353 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background: #f5eaec;
+  font-family: Georgia, serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* TOPO */
+
+.topbar {
+  height: 70px;
+  background: #c93358;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 50px;
+}
+
+.logo h1 {
+  color: #5a1730;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 0.9;
+}
+
+.search-box {
+  width: 570px;
+  height: 30px;
+
+  background: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 8px;
+}
+
+.search-box input {
+  border: none;
+  width: 100%;
+  outline: none;
+}
+
+.search-box .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home p {
+  color: #4b1027;
+  font-size: 14px;
+}
+
+.home img {
+  width: 35px;
+  height: 35px;
+}
+
+.house {
+  font-size: 24px;
+}
+
+/* MENU */
+
+.menu {
+  height: 32px;
+  background: #e88499;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.menu a {
+  color: #540e26;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+
+  padding: 6px 12px;
+
+  border-radius: 8px;
+}
+
+.menu a:hover {
+  background: #540e26;
+  color: #fdebed;
+}
+
+/* BANNER */
+.banner {
+  width: 92%;
+  margin: 35px auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-content {
+  width: 840px;
+  height: 230px;
+  background: #ca3959;
+}
+
+.arrow {
+  border: none;
+  background: transparent;
+
+  font-size: 60px;
+  color: #ca3959;
+
+  cursor: default;
+}
+
+/*============ SLIDES ============*/
+.containerslide {
+  margin: 0;
+
+  width: 900px;
+  height: 500px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.slides {
+  display: flex;
+
+  width: 400%;
+
+  animation: slide 10s infinite;
+}
+
+.slides img {
+  width: 900px;
+
+  transition: 1s;
+}
+
+.slides:hover {
+  animation-play-state: paused;
+}
+
+.slides img:hover {
+  transform: scale(1.1);
+}
+
+/* ANIMAÇÃO DOS SLIDES */
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-900px);
+  }
+
+  45% {
+    transform: translateX(-900px);
+  }
+
+  50% {
+    transform: translateX(-1800px);
+  }
+
+  70% {
+    transform: translateX(-1800px);
+  }
+
+  75% {
+    transform: translateX(-2700px);
+  }
+
+  100% {
+    transform: translateX(-2700px);
+  }
+}
+
+/* CONTEÚDO */
+.container {
+  width: 90%;
+  margin: 20px auto;
+
+  display: flex;
+  justify-content: flex-start;
+
+  gap: 80px;
+}
+
+.content {
+  width: 75%;
+}
+
+.content section {
+  background: #fdebed;
+
+  margin-bottom: 40px;
+  padding: 30px;
+
+  border-radius: 20px;
+
+  border-left: 8px solid #ca3959;
+
+  box-shadow: 0 5px 15px rgba(84, 14, 38, 0.12);
+
+  transition: 0.3s ease;
+}
+
+.content section:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 10px 25px rgba(84, 14, 38, 0.2);
+}
+
+.content h2 {
+  font-size: 55px;
+  color: #540e26;
+
+  font-family: "Cormorant Garamond", serif;
+
+  margin-bottom: 20px;
+
+  border-bottom: 2px solid #f27e91;
+  padding-bottom: 8px;
+}
+
+.content p {
+  color: #540e26;
+
+  line-height: 1.8;
+
+  font-size: 17px;
+
+  margin-bottom: 15px;
+}
+
+/* LIVROS */
+
+.livros-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.livro-card {
+  background: white;
+
+  width: 220px;
+
+  padding: 20px;
+
+  border-radius: 15px;
+
+  border-top: 5px solid #ca3959;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+}
+
+.livro-card:hover {
+  transform: scale(1.05);
+}
+
+.livro-card h3 {
+  color: #540e26;
+  margin-bottom: 10px;
+}
+
+/* LATERAL */
+.sidebar {
+  width: 220px;
+
+  background: #fdebed;
+
+  padding: 20px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 5px 15px rgba(84, 14, 38, 0.12);
+
+  position: sticky;
+  top: 140px;
+}
+
+.sidebar img {
+  width: 100%;
+}
+
+.sidebar p {
+  margin-top: 20px;
+  text-align: center;
+  color: #4b1027;
+}
+
+footer {
+  background: #540e26;
+
+  color: #fdebed;
+
+  text-align: center;
+
+  padding: 20px;
+
+  margin-top: 50px;
+}
