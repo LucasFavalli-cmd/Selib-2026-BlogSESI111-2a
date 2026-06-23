@@ -22,7 +22,8 @@ a:active {
 }
 
 body {
-  background: #f5eaec;
+  background: linear-gradient(to bottom, #f5eaec, #fff8f9);
+
   font-family: Georgia, serif;
 }
 
@@ -30,8 +31,9 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-}
 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
 /* TOPO */
 
 .topbar {
@@ -223,6 +225,34 @@ header {
   }
 }
 
+/*============ destaques ============*/
+
+.destaques {
+  width: 90%;
+  margin: 0 auto 40px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.destaque {
+  background: white;
+
+  text-align: center;
+
+  padding: 25px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.destaque h3 {
+  color: #ca3959;
+  font-size: 32px;
+}
+
 /* CONTEÚDO */
 .container {
   width: 90%;
@@ -260,15 +290,21 @@ header {
 }
 
 .content h2 {
-  font-size: 55px;
-  color: #540e26;
+  position: relative;
+}
 
-  font-family: "Cormorant Garamond", serif;
+.content h2::after {
+  content: "";
 
-  margin-bottom: 20px;
+  width: 80px;
+  height: 4px;
 
-  border-bottom: 2px solid #f27e91;
-  padding-bottom: 8px;
+  background: #ca3959;
+
+  position: absolute;
+
+  bottom: -2px;
+  left: 0;
 }
 
 .content p {
@@ -291,18 +327,19 @@ header {
 
 .livro-card {
   background: white;
-
   width: 220px;
-
   padding: 20px;
-
   border-radius: 15px;
-
   border-top: 5px solid #ca3959;
-
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
   transition: 0.3s;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.livro-card p {
+  flex-grow: 1;
 }
 
 .livro-card:hover {
@@ -314,9 +351,47 @@ header {
   margin-bottom: 10px;
 }
 
+.livro-imagem {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  margin-top: 15px;
+  background: #fff;
+}
+
+/* LINKS */
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.link-card {
+  background: linear-gradient(135deg, #ca3959, #e88499);
+
+  color: white !important;
+
+  padding: 18px;
+
+  border-radius: 15px;
+
+  text-align: center;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.link-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
 /* LATERAL */
 .sidebar {
   width: 220px;
+  height: 500px;
 
   background: #fdebed;
 
@@ -328,12 +403,15 @@ header {
 
   position: sticky;
   top: 140px;
+
+  text-align: center;
 }
 
 .sidebar img {
   width: 100%;
+  border-radius: 15px;
+  border: 4px solid #ca3959;
 }
-
 .sidebar p {
   margin-top: 20px;
   text-align: center;
